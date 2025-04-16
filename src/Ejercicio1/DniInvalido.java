@@ -11,4 +11,9 @@ public class DniInvalido extends IOException{
 		return "El DNI ingresado es Invalido";
 	}
 
+	   public static void verificarDniInvalido(String dni) throws DniInvalido {
+	        if (!dni.matches("\\d{8}")) {
+	            throw new DniInvalido();
+	        }
+	    }
 }
