@@ -1,7 +1,9 @@
 package Ejercicio1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
@@ -66,5 +68,16 @@ public class Archivo {
 		}
 
 		return personas;
+	}
+	
+	public static void escribirPersonas(Set<Persona> personas, String rutaSalida) {
+	    try (BufferedWriter escritor = new BufferedWriter(new FileWriter(rutaSalida))) {
+	        for (Persona persona : personas) {
+	            escritor.write(persona.toString()); 
+	            escritor.newLine(); 
+	        }
+	    } catch (IOException e) {
+	        System.out.println("Error al escribir el archivo: " + e.getMessage());
+	    }
 	}
 	}
