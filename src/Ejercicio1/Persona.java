@@ -69,5 +69,11 @@ public class Persona implements Comparable <Persona> {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
+	@Override
+	public String toString() {
+		return nombre + " " + apellido + " - DNI: " + dni;
+	}
+	
 	
 }
